@@ -20,6 +20,9 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
+-- write to save
+vim.keymap.set({ "n", "v" }, "<C-s>", ":w<CR>")
+
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 

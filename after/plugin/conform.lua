@@ -3,6 +3,7 @@ require("conform").setup({
         python = { "black" },
         go = { "gofmt" },
         javascript = { { "prettierd", "prettier" } },
+        -- terraform = { "terraform-ls" },
     },
     format_on_save = {
         -- These options will be passed to conform.format()
