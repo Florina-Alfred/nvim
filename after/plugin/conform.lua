@@ -3,6 +3,7 @@ require("conform").setup({
         python = { "black" },
         go = { "gofmt" },
         javascript = { { "prettierd", "prettier" } },
+        rust = { "rust-analyser" },
         -- terraform = { "terraform-ls" },
     },
     format_on_save = {
