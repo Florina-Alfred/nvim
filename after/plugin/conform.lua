@@ -2,7 +2,7 @@ require("conform").setup({
     formatters_by_ft = {
         python = { "black" },
         go = { "gofmt" },
-        javascript = { { "prettierd", "prettier" } },
+        javascript = { { "prettier" } },
         rust = { "rust-analyser" },
         -- terraform = { "terraform-ls" },
     },
