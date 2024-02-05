@@ -11,8 +11,8 @@ require('Comment').setup {
         line = '<C-a>',
         -- line = 'gcc',
         ---Block-comment toggle keymap
-        -- block = '<C-Y>',
-        block = 'gbc',
+        block = '<C-y>',
+        -- block = 'gbc',
     },
     ---LHS of operator-pending mappings in NORMAL and VISUAL mode
     opleader = {
@@ -20,7 +20,8 @@ require('Comment').setup {
         line = '<C-a>',
         -- line = 'gc',
         ---Block-comment keymap
-        block = 'gb',
+        block = '<C-y>',
+        -- block = 'gb',
     },
     ---LHS of extra mappings
     extra = {
@@ -51,5 +52,5 @@ local ft = require('Comment.ft')
 -- 1. Using set function
 
 ft
- -- Set only line comment
- .set('python', '#%s', '"""%s"""')
+-- Set only line comment
+    .set('python', '#%s', '"""%s"""')
