@@ -186,7 +186,7 @@ require('lazy').setup(
         {
             'nvim-lualine/lualine.nvim',
             dependencies = { 'nvim-tree/nvim-web-devicons' }
-        }
+        },
 
         -- {
         --     'stevearc/oil.nvim',
@@ -195,6 +195,7 @@ require('lazy').setup(
         --     dependencies = { "nvim-tree/nvim-web-devicons" },
         -- },
 
+        'lewis6991/gitsigns.nvim',
 
     },
     {}
