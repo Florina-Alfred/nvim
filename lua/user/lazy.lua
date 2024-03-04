@@ -196,6 +196,22 @@ require('lazy').setup(
         -- },
 
         'lewis6991/gitsigns.nvim',
+        {
+            'vladdoster/remember.nvim',
+            config = [[ require('remember') ]]
+        },
+        -- {
+        --     'Exafunction/codeium.vim',
+        --     event = 'BufEnter'
+        -- },
+        {
+            "zbirenbaum/copilot.lua",
+            cmd = "Copilot",
+            event = "InsertEnter",
+            -- config = function()
+            --     require("copilot").setup({})
+            -- end,
+        }
 
     },
     {}
