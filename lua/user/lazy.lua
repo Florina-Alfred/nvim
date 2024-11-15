@@ -37,7 +37,8 @@ require('lazy').setup(
                 require("harpoon"):setup()
             end,
             keys = {
-                { "<leader>A", function() require("harpoon"):list():append() end,  desc = "harpoon file", },
+                -- { "<leader>A", function() require("harpoon"):list():append() end,  desc = "harpoon file", },
+                { "<leader>A", function() require("harpoon"):list():add() end,     desc = "harpoon file", },
                 {
                     "<leader>a",
                     function()
@@ -66,6 +67,15 @@ require('lazy').setup(
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'hrsh7th/nvim-cmp' },
         { 'L3MON4D3/LuaSnip' },
+        -- {
+        --     'stevearc/oil.nvim',
+        --     ---@module 'oil'
+        --     ---@type oil.SetupOpts
+        --     opts = {},
+        --     -- Optional dependencies
+        --     dependencies = { { "echasnovski/mini.icons", opts = {} } },
+        --     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+        -- },
 
         -- {
         --     "VonHeikemen/lsp-zero.nvim",
