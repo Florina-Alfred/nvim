@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- remap number increnent to Alt + j and k
-vim.keymap.set("n", "<C-w>", "<C-a>")
+vim.keymap.set("n", "<C-r>", "<C-a>")
 -- vim.keymap.set("n", "<C-w>", "<C-x>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
