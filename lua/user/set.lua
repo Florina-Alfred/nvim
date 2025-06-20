@@ -14,7 +14,15 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+-- Create a cross-platform compatible path for undodir
+local home = os.getenv("HOME")
+-- On Windows, use USERPROFILE if HOME is not available
+if not home then
+    home = os.getenv("USERPROFILE")
+end
+-- Use proper path separator based on OS
+local path_separator = package.config:sub(1, 1) -- Gets '/' on Unix and '\' on Windows
+vim.opt.undodir = home .. path_separator .. ".vim" .. path_separator .. "undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
