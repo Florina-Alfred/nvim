@@ -9,15 +9,12 @@ require("trouble").setup({
     auto_close = true,
     auto_preview = true,
     auto_fold = false,
-    use_diagnostic_signs = true,
-    -- Add keymaps configuration
-    keys = {
-        -- Keymaps for trouble navigation and actions
-        { "<leader>xx", function() require("trouble").toggle("diagnostics") end,           desc = "Toggle Diagnostics" },
-        { "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end, desc = "Toggle Workspace Diagnostics" },
-        { "<leader>xd", function() require("trouble").toggle("document_diagnostics") end,  desc = "Toggle Document Diagnostics" },
-        { "<leader>xq", function() require("trouble").toggle("quickfix") end,              desc = "Toggle Quickfix List" },
-        { "<leader>xl", function() require("trouble").toggle("loclist") end,               desc = "Toggle Location List" },
-        { "gR",         function() require("trouble").toggle("lsp_references") end,        desc = "Toggle LSP References" },
-    }
+    use_diagnostic_signs = true
 })
+
+vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle("diagnostics") end)
+vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
+vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
+vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
+vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
+vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)

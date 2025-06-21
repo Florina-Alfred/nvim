@@ -15,7 +15,10 @@ require("lazy").setup(
     {
         "navarasu/onedark.nvim",
         "nvim-tree/nvim-web-devicons",
-        "m4xshen/autoclose.nvim",
+        {
+            "echasnovski/mini.nvim",
+            version = '*',
+        },
         "nvim-lua/plenary.nvim",
         {
             "folke/snacks.nvim",
@@ -34,7 +37,6 @@ require("lazy").setup(
         "nvim-telescope/telescope.nvim",
         -- "nvim-treesitter/playground",
         -- "nvim-treesitter/nvim-treesitter-context",
-        -- "theprimeagen/harpoon",
 
         {
             "theprimeagen/harpoon",
@@ -75,57 +77,13 @@ require("lazy").setup(
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/nvim-cmp",
         "L3MON4D3/LuaSnip",
-        -- {
-        --     "stevearc/oil.nvim",
-        --     ---@module 'oil'
-        --     ---@type oil.SetupOpts
-        --     opts = {},
-        --     -- Optional dependencies
-        --     dependencies = { { "echasnovski/mini.icons", opts = {} } },
-        --     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
-        -- },
-
-        -- {
-        --     "VonHeikemen/lsp-zero.nvim",
-        --     branch = 'v3.x',
-        --     dependencies = {
-        --         -- LSP Support
-        --         { "neovim/nvim-lspconfig" },
-        --         { "williamboman/mason.nvim" },
-        --         { "williamboman/mason-lspconfig.nvim" },
-        --
-        --         -- Autocompletion
-        --         { "hrsh7th/nvim-cmp" },
-        --         { "hrsh7th/cmp-buffer" },
-        --         { "hrsh7th/cmp-path" },
-        --         { "saadparwaiz1/cmp_luasnip" },
-        --         { "hrsh7th/cmp-nvim-lsp" },
-        --         { "hrsh7th/cmp-nvim-lua" },
-        --
-        --         -- Snippets
-        --         { "L3MON4D3/LuaSnip" },
-        --         { "rafamadriz/friendly-snippets" },
-        --     }
-        -- },
 
         {
             "folke/trouble.nvim",
             dependencies = { "nvim-tree/nvim-web-devicons" },
             opts = {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
             },
         },
-
-        -- {
-        --     "folke/trouble.nvim",
-        --     config = function()
-        --         require("trouble").setup {
-        --             icons = false,
-        --         }
-        --     end
-        -- },
 
         {
             "tzachar/local-highlight.nvim",
@@ -142,15 +100,11 @@ require("lazy").setup(
             end,
         },
 
-        {
-            "mg979/vim-visual-multi"
-        },
-
+        "mg979/vim-visual-multi",
 
         {
             "numToStr/Comment.nvim",
             opts = {
-                -- add any options here
             },
             lazy = false,
         },
@@ -164,7 +118,6 @@ require("lazy").setup(
             end,
         },
 
-        -- "mrcjkb/rustaceanvim",
         {
             "mrcjkb/rustaceanvim",
             version = "^3",
@@ -213,18 +166,7 @@ require("lazy").setup(
             "vladdoster/remember.nvim",
             config = [[ require("remember") ]]
         },
-        -- {
-        --     "Exafunction/codeium.vim",
-        --     event = "BufEnter"
-        -- },
-        -- {
-        --     "zbirenbaum/copilot.lua",
-        --     cmd = "Copilot",
-        --     event = "InsertEnter",
-        --     -- config = function()
-        --     --     require("copilot").setup({})
-        --     -- end,
-        -- }
+
         {
             "yetone/avante.nvim",
             event = "VeryLazy",
@@ -232,32 +174,17 @@ require("lazy").setup(
             ---@module "avante"
             ---@type avante.Config
             opts = {
-                -- add any opts here
-                -- for example
                 provider = "copilot",
                 providers = {
                     copilot = {
                         model = "claude-3.7-sonnet"
                     },
-                    -- openai = {
-                    --     endpoint = "https://api.openai.com/v1",
-                    --     model = "gpt-4o",                 -- your desired model (or use gpt-4o, etc.)
-                    --     extra_request_body = {
-                    --         timeout = 30000,              -- Timeout in milliseconds, increase this for reasoning models
-                    --         temperature = 0.75,
-                    --         max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-                    --         --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-                    --     },
-                    -- },
                 },
             },
-            -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
             build = "make",
-            -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
             dependencies = {
                 "nvim-lua/plenary.nvim",
                 "MunifTanjim/nui.nvim",
-                --- The below dependencies are optional,
                 "echasnovski/mini.pick",         -- for file_selector provider mini.pick
                 "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
                 "hrsh7th/nvim-cmp",              -- autocompletion for avante commands and mentions
@@ -266,24 +193,20 @@ require("lazy").setup(
                 "nvim-tree/nvim-web-devicons",   -- or echasnovski/mini.icons
                 "zbirenbaum/copilot.lua",        -- for providers='copilot'
                 {
-                    -- support for image pasting
                     "HakonHarnes/img-clip.nvim",
                     event = "VeryLazy",
                     opts = {
-                        -- recommended settings
                         default = {
                             embed_image_as_base64 = false,
                             prompt_for_file_name = false,
                             drag_and_drop = {
                                 insert_mode = true,
                             },
-                            -- required for Windows users
                             use_absolute_path = true,
                         },
                     },
                 },
                 {
-                    -- Make sure to set this up properly if you have lazy=true
                     "MeanderingProgrammer/render-markdown.nvim",
                     opts = {
                         file_types = { "markdown", "Avante" },
@@ -294,14 +217,9 @@ require("lazy").setup(
                     "folke/noice.nvim",
                     event = "VeryLazy",
                     opts = {
-                        -- add any options here
                     },
                     dependencies = {
-                        -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
                         "MunifTanjim/nui.nvim",
-                        -- OPTIONAL:
-                        --   `nvim-notify` is only needed, if you want to use the notification view.
-                        --   If not available, we use `mini` as the fallback
                         "rcarriga/nvim-notify",
                     }
                 }
