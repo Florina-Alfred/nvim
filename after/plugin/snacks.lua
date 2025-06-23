@@ -8,7 +8,7 @@ require('snacks').setup({
     indent = { enabled = true },
     input = { enabled = true },
     picker = { enabled = true },
-    notifier = { enabled = true },
+    notifier = { enabled = true, margin = { top = 0, right = 1, bottom = 1 }, top_down = false, },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = true },
