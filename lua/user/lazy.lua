@@ -15,18 +15,23 @@ require("lazy").setup(
     {
         "navarasu/onedark.nvim",
         "nvim-tree/nvim-web-devicons",
+
         {
             "echasnovski/mini.nvim",
             version = '*',
         },
+
         "nvim-lua/plenary.nvim",
+
         {
             "folke/snacks.nvim",
             priority = 1000,
             lazy = false,
             ---@type snacks.Config
         },
+
         "m4xshen/hardtime.nvim",
+
         {
             {
                 "nvim-treesitter/nvim-treesitter",
@@ -35,18 +40,14 @@ require("lazy").setup(
         },
 
         "nvim-telescope/telescope.nvim",
-        -- "nvim-treesitter/playground",
-        -- "nvim-treesitter/nvim-treesitter-context",
 
         {
             "theprimeagen/harpoon",
             branch = "harpoon2",
-            dependencies = { "nvim-lua/plenary.nvim" },
             config = function()
                 require("harpoon"):setup()
             end,
             keys = {
-                -- { "<leader>A", function() require("harpoon"):list():append() end,  desc = "harpoon file", },
                 { "<leader>A", function() require("harpoon"):list():add() end,     desc = "harpoon file", },
                 {
                     "<leader>a",
@@ -72,7 +73,10 @@ require("lazy").setup(
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
 
-        { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
+        {
+            "VonHeikemen/lsp-zero.nvim",
+            branch = "v3.x"
+        },
         "neovim/nvim-lspconfig",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/nvim-cmp",
@@ -118,36 +122,36 @@ require("lazy").setup(
             end,
         },
 
-        {
-            "mrcjkb/rustaceanvim",
-            version = "^3",
-            dependencies = {
-                "nvim-lua/plenary.nvim",
-                "mfussenegger/nvim-dap",
-                {
-                    "lvimuser/lsp-inlayhints.nvim",
-                    opts = {}
-                },
-            },
-            ft = { "rust" },
-            config = function()
-                vim.g.rustaceanvim = {
-                    inlay_hints = {
-                        highlight = "NonText",
-                    },
-                    tools = {
-                        hover_actions = {
-                            auto_focus = true,
-                        },
-                    },
-                    server = {
-                        on_attach = function(client, bufnr)
-                            require("lsp-inlayhints").on_attach(client, bufnr)
-                        end
-                    }
-                }
-            end
-        },
+        -- {
+        --     "mrcjkb/rustaceanvim",
+        --     version = "^3",
+        --     dependencies = {
+        --         "nvim-lua/plenary.nvim",
+        --         "mfussenegger/nvim-dap",
+        --         {
+        --             "lvimuser/lsp-inlayhints.nvim",
+        --             opts = {}
+        --         },
+        --     },
+        --     ft = { "rust" },
+        --     config = function()
+        --         vim.g.rustaceanvim = {
+        --             inlay_hints = {
+        --                 highlight = "NonText",
+        --             },
+        --             tools = {
+        --                 hover_actions = {
+        --                     auto_focus = true,
+        --                 },
+        --             },
+        --             server = {
+        --                 on_attach = function(client, bufnr)
+        --                     require("lsp-inlayhints").on_attach(client, bufnr)
+        --                 end
+        --             }
+        --         }
+        --     end
+        -- },
 
         {
             "nvim-lualine/lualine.nvim",
