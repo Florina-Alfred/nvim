@@ -159,7 +159,13 @@ require("lazy").setup(
 
         "nvim-lualine/lualine.nvim",
 
-        -- "stevearc/oil.nvim",
+        {
+            'stevearc/oil.nvim',
+            ---@module 'oil'
+            ---@type oil.SetupOpts
+            dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+            lazy = false,
+        },
 
         "lewis6991/gitsigns.nvim",
         {
