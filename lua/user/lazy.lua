@@ -14,6 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(
     {
         "navarasu/onedark.nvim",
+        -- {
+        --     "folke/tokyonight.nvim",
+        --     lazy = false,
+        --     priority = 1000,
+        --     opts = {},
+        -- },
 
         {
             "echasnovski/mini.nvim",
