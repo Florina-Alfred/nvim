@@ -27,7 +27,7 @@ require("oil").setup({
         concealcursor = "nvic",
     },
     -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
-    delete_to_trash = false,
+    delete_to_trash = true,
     -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
     skip_confirm_for_simple_edits = false,
     -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
@@ -129,7 +129,7 @@ require("oil").setup({
         -- optionally override the oil buffers window title with custom function: fun(winid: integer): string
         get_win_title = nil,
         -- preview_split: Split direction: "auto", "left", "right", "above", "below".
-        preview_split = "left",
+        preview_split = "right",
         -- This is the config that will be passed to nvim_open_win.
         -- Change values here to customize the layout
         override = function(conf)
