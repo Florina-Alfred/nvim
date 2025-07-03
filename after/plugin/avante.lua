@@ -8,11 +8,12 @@ require("avante").setup({
             model = "gpt-4.1",
         },
     },
+    -- auto_suggestions_provider = "ollama",
     -- provider = "ollama",
     -- providers = {
     --     ollama = {
     --         endpoint = "http://localhost:11434",
-    --         model = "gemma3:latest",
+    --         model = "mistral:latest",
     --     },
     -- },
     behaviour = {
