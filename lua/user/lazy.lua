@@ -184,10 +184,7 @@ require("lazy").setup(
 
         {
             "yetone/avante.nvim",
-            -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-            -- ⚠️ must add this setting! ! !
             build = function()
-                -- conditionally use the correct build system for the current OS
                 if vim.fn.has("win32") == 1 then
                     return "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
                 else
@@ -199,37 +196,6 @@ require("lazy").setup(
             version = false, -- Never set this value to "*"! Never!
             ---@module 'avante'
             ---@type avante.Config
-            -- opts = {
-            --     -- add any opts here
-            --     -- for example
-            --     auto_suggestions_provider = "copilot",
-            --     provider = "copilot",
-            --     providers = {
-            --         copilot = {
-            --             model = "gpt-4.1",
-            --         },
-            --     },
-            --     -- provider = "ollama",
-            --     -- providers = {
-            --     --     ollama = {
-            --     --         endpoint = "http://localhost:11434",
-            --     --         model = "gemma3:latest",
-            --     --     },
-            --     -- },
-            --     behaviour = {
-            --         auto_suggestions = true, -- Experimental stage
-            --         auto_set_highlight_group = true,
-            --         auto_set_keymaps = true,
-            --         auto_apply_diff_after_generation = false,
-            --         support_paste_from_clipboard = true,
-            --         minimize_diff = true,                  -- Whether to remove unchanged lines when applying a code block
-            --         enable_token_counting = true,          -- Whether to enable token counting. Default to true.
-            --         auto_approve_tool_permissions = false, -- Default: show permission prompts for all tools
-            --         -- Examples:
-            --         -- auto_approve_tool_permissions = true,                -- Auto-approve all tools (no prompts)
-            --         -- auto_approve_tool_permissions = {"bash", "replace_in_file"}, -- Auto-approve specific tools only
-            --     },
-            -- },
             dependencies = {
                 --- The below dependencies are optional,
                 "echasnovski/mini.pick",       -- for file_selector provider mini.pick

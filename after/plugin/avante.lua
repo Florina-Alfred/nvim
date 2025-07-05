@@ -1,6 +1,15 @@
+local function read_system_prompt()
+    local file = io.open(vim.fn.stdpath("config") .. "/system_prompt.txt", "r")
+    if not file then return nil end
+    local content = file:read("*a")
+    file:close()
+    return content
+end
+
 require("avante").setup({
     -- add any opts here
     -- for example
+    system_prompt = read_system_prompt(),
     auto_suggestions_provider = "copilot",
     provider = "copilot",
     providers = {
