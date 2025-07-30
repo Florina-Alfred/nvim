@@ -1,5 +1,3 @@
--- vim.opt.guicursor = ""
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -26,6 +24,7 @@ vim.opt.undodir = home .. path_separator .. ".vim" .. path_separator .. "undodir
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
+-- vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
@@ -37,3 +36,30 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- vim.opt.colorcolumn = "80"
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+    group = vim.api.nvim_create_augroup('HighlightYank', {}),
+    callback = function()
+        vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 200 })
+    end,
+})
+
+if vim.lsp.inlay_hint then
+    vim.lsp.inlay_hint.enable(true, { 0 })
+end
+
+local virtual_lines_enabled = true
+function _G.toggle_virtual_lines()
+    virtual_lines_enabled = not virtual_lines_enabled
+    vim.diagnostic.config({ virtual_lines = virtual_lines_enabled })
+end
+
+vim.keymap.set('n', '<leader>vl', _G.toggle_virtual_lines, { desc = 'Toggle virtual_lines diagnostics' })
+
+local virtual_text_enabled = true
+function _G.toggle_virtual_text()
+    virtual_text_enabled = not virtual_text_enabled
+    vim.diagnostic.config({ virtual_text = virtual_text_enabled })
+end
+
+vim.keymap.set('n', '<leader>vt', _G.toggle_virtual_text, { desc = 'Toggle virtual_text diagnostics' })

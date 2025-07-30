@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
--- {},
     {
         "navarasu/onedark.nvim",
         -- {
@@ -56,7 +55,7 @@ require("lazy").setup(
             keys = {
                 { "<leader>A", function() require("harpoon"):list():add() end,     desc = "harpoon file", },
                 {
-                    "<leader>a",
+                    "<leader>h",
                     function()
                         local harpoon = require("harpoon")
                         harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -88,11 +87,7 @@ require("lazy").setup(
         "hrsh7th/nvim-cmp",
         "L3MON4D3/LuaSnip",
 
-        {
-            "folke/trouble.nvim",
-            opts = {
-            },
-        },
+        "folke/trouble.nvim",
 
         {
             "tzachar/local-highlight.nvim",
@@ -158,6 +153,12 @@ require("lazy").setup(
         --     end
         -- },
 
+        {
+            'mrcjkb/rustaceanvim',
+            version = '^6', -- Recommended
+            lazy = false,   -- This plugin is already lazy
+        },
+
         "nvim-lualine/lualine.nvim",
 
         {
@@ -169,6 +170,7 @@ require("lazy").setup(
         },
 
         "lewis6991/gitsigns.nvim",
+
         {
             "vladdoster/remember.nvim",
             config = [[ require("remember") ]]
