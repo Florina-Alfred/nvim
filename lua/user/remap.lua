@@ -28,8 +28,8 @@ vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<ESC>:w<CR>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 -- vim.keymap.set("i", "jk", "<Esc>")
 
-vim.keymap.set({ "n", "v" }, "wj", "}<Down>")
-vim.keymap.set({ "n", "v" }, "wk", "{<Up>")
+vim.keymap.set({ "n", "v" }, "gj", "}<Down>")
+vim.keymap.set({ "n", "v" }, "gk", "{<Up>")
 
 vim.keymap.set("i", "<C-h>", "<Left>")
 vim.keymap.set("i", "<C-l>", "<Right>")
