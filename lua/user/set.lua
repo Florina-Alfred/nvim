@@ -34,6 +34,8 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+-- Set a reasonable timeoutlen for key sequences to not break macro recording
+vim.opt.timeoutlen = 500
 
 -- vim.opt.colorcolumn = "80"
 
@@ -55,6 +57,13 @@ function _G.toggle_virtual_lines()
 end
 
 vim.keymap.set('n', '<leader>vl', _G.toggle_virtual_lines, { desc = 'Toggle virtual_lines diagnostics' })
+
+-- Toggle wrap
+function _G.toggle_wrap()
+    vim.opt.wrap = not vim.opt.wrap:get()
+end
+
+vim.keymap.set('n', '<leader>w', _G.toggle_wrap, { desc = 'Toggle line wrap' })
 
 local virtual_text_enabled = true
 function _G.toggle_virtual_text()

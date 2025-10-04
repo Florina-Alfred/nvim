@@ -39,6 +39,10 @@ require("avante").setup({
         -- auto_approve_tool_permissions = true,                -- Auto-approve all tools (no prompts)
         -- auto_approve_tool_permissions = {"bash", "replace_in_file"}, -- Auto-approve specific tools only
     },
+    web_search_engine = {
+        provider = "searxng",          -- tavily, serpapi, google, kagi, brave, or searxng
+        proxy = "http://0.0.0.0:8081", -- proxy support, e.g., http://127.0.0.1:7890
+    },
     mappings = {
         suggestion = {
             accept = "<C-x>",
