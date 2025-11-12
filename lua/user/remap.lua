@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>")
+-- vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>")
+vim.keymap.set("n", "-", "<cmd>Oil<CR>")
 
 -- remap number increment/decrement to Ctrl+k and Ctrl+j
 vim.keymap.set("n", "<C-l>", "<C-a>")
